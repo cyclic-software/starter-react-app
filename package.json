@@ -2,17 +2,8 @@
   "name": "starter-react-app",
   "version": "0.1.0",
   "private": true,
-  "devDependencies": {
-    "@testing-library/jest-dom": "^5.16.2",
-    "@testing-library/react": "^12.1.2",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "5.0.0",
-    "web-vitals": "^2.1.4"
-  },
   "scripts": {
-    "start": "http-server ./build/ -a localhost -p 3000",
+    "start": "ls -l ./node_modules/ && ls -l node_modules/http-server && ls -l node_modules/.bin && http-server ./build/ -a localhost -p 3000",
     "r:start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -39,5 +30,14 @@
   "dependencies": {
     "chalk": "^4.1.2",
     "http-server": "^14.1.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "5.0.0",
+    "web-vitals": "^2.1.4"
   }
 }
