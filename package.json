@@ -2,11 +2,9 @@
   "name": "starter-react-app",
   "version": "0.1.0",
   "private": true,
-  "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "http-server:start": "http-server ./build/ -a localhost -p 3000",
-    "r:start": "react-scripts start",
+    "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -30,9 +28,7 @@
     ]
   },
   "dependencies": {
-    "chalk": "^4.1.2",
-    "express": "^4.17.3",
-    "http-server": "^14.1.0"
+    "express": "^4.17.3"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.2",
