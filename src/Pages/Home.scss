@@ -1,0 +1,29 @@
+.Home {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.instructions {
+    margin: auto
+}
+
+.movieOne,
+.movieTwo {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    align-items: center;
+}
+
+.score {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.Hidden {
+    display: none
+}
