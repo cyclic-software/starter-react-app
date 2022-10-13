@@ -61,13 +61,13 @@ function Home({ setCorrect, setWrong, correct, wrong }) {
             </div>
             <div className="movieOne">
                 <h2>{movieOne.title}</h2>
-                <p className={(hideOne === true) ? 'Hidden' : ''}>{movieOne.overview}</p>
+                <p className={(hideOne === true) ? 'Hidden' : 'Centered'}>{movieOne.overview}</p>
                 <button onClick={() => setHideOne(!hideOne)}>{(hideOne === true) ? 'Show Description' : 'Hide Description'}</button>
                 <button onClick={movieOneHandler}>Movie One</button>
             </div>
             <div className="movieTwo">
                 <h2>{movieTwo.title}</h2>
-                <p className={(hideTwo === true) ? 'Hidden' : ''}>{movieTwo.overview}</p>
+                <p className={(hideTwo === true) ? 'Hidden' : 'Centered'}>{movieTwo.overview}</p>
                 <button onClick={() => setHideTwo(!hideTwo)}>{(hideTwo === true) ? 'Show Description' : 'Hide Description'}</button>
                 <button onClick={movieTwoHandler}>Movie Two</button>
             </div>
