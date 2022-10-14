@@ -16,6 +16,17 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
     align-items: center;
+    width: 40%;
+}
+
+.movieTitleButton {
+    width: 100%;
+}
+
+.moviesContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
 }
 
 .score {
@@ -30,6 +41,16 @@
 
 .Centered {
     display: flex;
-    margin: auto;
-    text-align: center;
+    text-align: start;
+    font-size: .8rem;
+}
+
+.wrong {
+    color: red;
+}
+
+.cross {
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-around;
 }

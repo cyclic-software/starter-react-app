@@ -59,21 +59,25 @@ function Home({ setCorrect, setWrong, correct, wrong }) {
             <div className="instructions">
                 <h1>Which came first?</h1>
             </div>
-            <div className="movieOne">
-                <h2>{movieOne.title}</h2>
-                <p className={(hideOne === true) ? 'Hidden' : 'Centered'}>{movieOne.overview}</p>
-                <button onClick={() => setHideOne(!hideOne)}>{(hideOne === true) ? 'Show Description' : 'Hide Description'}</button>
-                <button onClick={movieOneHandler}>Movie One</button>
-            </div>
-            <div className="movieTwo">
-                <h2>{movieTwo.title}</h2>
-                <p className={(hideTwo === true) ? 'Hidden' : 'Centered'}>{movieTwo.overview}</p>
-                <button onClick={() => setHideTwo(!hideTwo)}>{(hideTwo === true) ? 'Show Description' : 'Hide Description'}</button>
-                <button onClick={movieTwoHandler}>Movie Two</button>
+            <div className="moviesContainer">
+                <div className="movieOne">
+                    <button className="movieTitleButton" onClick={movieOneHandler}>{movieOne.title}</button>
+                    <p className={(hideOne === true) ? 'Hidden' : 'Centered'}>{movieOne.overview}</p>
+                    <button onClick={() => setHideOne(!hideOne)}>{(hideOne === true) ? 'Show Description' : 'Hide Description'}</button>
+                </div>
+                <div className="movieTwo">
+                    <button className="movieTitleButton" onClick={movieTwoHandler}>{movieTwo.title}</button>
+                    <p className={(hideTwo === true) ? 'Hidden' : 'Centered'}>{movieTwo.overview}</p>
+                    <button onClick={() => setHideTwo(!hideTwo)}>{(hideTwo === true) ? 'Show Description' : 'Hide Description'}</button>
+                </div>
             </div>
             <div className="score">
                 <h2>Correct: {correct}</h2>
-                <h2>Incorrect: {wrong}</h2>
+                <div className='cross'>
+                    <div className={(wrong >= 1) ? 'wrong' : ''}>X</div>
+                    <div span className={(wrong >= 2) ? 'wrong' : ''}>X</div>
+                    <div className={(wrong >= 3) ? 'wrong' : ''}>X</div>
+                </div>
             </div>
         </div>
     );

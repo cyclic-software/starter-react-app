@@ -4,7 +4,7 @@ function Header() {
 
     return (
         <div className="Header">
-            <h1>ChronoFilm</h1>
+            <h1>CHRONOFILM</h1>
         </div>
     );
 }
