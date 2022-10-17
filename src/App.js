@@ -1,5 +1,6 @@
 import Home from "./Pages/Home";
 import Header from "./Components/Header/Header";
+import './App.css'
 import { useEffect, useState } from "react";
 function App() {
 
@@ -29,10 +30,10 @@ function App() {
   }
   else if (gameOver === true) {
     return (
-      <>
-        <h1>Your score was: {correct}</h1>
-        <button onClick={newGameHandler}>New Game?</button>
-      </>
+      <div className="score">
+        <h1 className="score__title">Your score was: {correct}</h1>
+        <button className="newGame" onClick={newGameHandler}>New Game?</button>
+      </div>
     )
   }
 }

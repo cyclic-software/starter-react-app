@@ -21,6 +21,12 @@
 
 .movieTitleButton {
     width: 100%;
+    background: white;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
 }
 
 .moviesContainer {
@@ -52,5 +58,5 @@
 .cross {
     font-size: 2rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
