@@ -1,5 +1,6 @@
 import Home from "./Pages/Home";
 import Header from "./Components/Header/Header";
+import Footer from "./Components/Footer/Footer";
 import './App.css'
 import { useEffect, useState } from "react";
 function App() {
@@ -25,6 +26,7 @@ function App() {
       <>
         <Header />
         <Home correct={correct} setCorrect={setCorrect} wrong={wrong} setWrong={setWrong} />
+        <Footer />
       </>
     );
   }
