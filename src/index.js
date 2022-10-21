@@ -6,9 +6,7 @@ import UserProvider from './context/UserProvider'
 import ContentProvider from './context/ContentProvider';
 import { BrowserRouter } from 'react-router-dom'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-
-root.render(
+ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <UserProvider>
