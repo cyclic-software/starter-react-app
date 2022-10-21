@@ -22,7 +22,7 @@ export default function UserProvider(props){
   const [userState, setUserState] = useState(initState)
   
   function signup(credentials){
-    axios.post("/auth/signup", credentials)
+    axios.post("https://api-plantae.cyclic.app/auth/signup", credentials)
       .then(res => {
         const { user, token } = res.data
         localStorage.setItem("token", token)
@@ -37,7 +37,7 @@ export default function UserProvider(props){
   }
 
   function login(credentials){
-    axios.post("/auth/login", credentials)
+    axios.post("https://api-plantae.cyclic.app/auth/login", credentials)
       .then(res => {
         const { user, token } = res.data
         localStorage.setItem("token", token)

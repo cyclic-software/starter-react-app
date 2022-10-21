@@ -120,7 +120,7 @@ export default function ContentProvider(props) {
 
   const getUserPosts = useCallback(() => {
     contentAxios
-      .get("/api/post/user")
+      .get("https://api-plantae.cyclic.app/api/post/user")
       .then((res) => {
         dispatch({ type: "getPosts", value: res.data });
       })
@@ -129,7 +129,7 @@ export default function ContentProvider(props) {
 
   function getAllPosts() {
     contentAxios
-      .get("/api/post/")
+      .get("https://api-plantae.cyclic.app/api/post/")
       .then((res) => {
         dispatch({ type: "getPosts", value: res.data });
       })
@@ -138,7 +138,7 @@ export default function ContentProvider(props) {
 
   function getOnePost(postId) {
     contentAxios
-      .get(`/api/post/singlePost/${postId}`)
+      .get(`https://api-plantae.cyclic.app/api/post/singlePost/${postId}`)
       .then((res) => {
         dispatch({ type: "setSinglePost", value: res.data[0] });
       })
@@ -147,7 +147,7 @@ export default function ContentProvider(props) {
 
   function addPost(newPost) {
     contentAxios
-      .post("/api/post", newPost)
+      .post("https://api-plantae.cyclic.app/api/post", newPost)
       .then((res) => {
         dispatch({ type: "appendPosts", value: res.data });
       })
@@ -156,7 +156,7 @@ export default function ContentProvider(props) {
 
   function deletePost(postId) {
     contentAxios
-      .delete(`/api/post/${postId}`)
+      .delete(`https://api-plantae.cyclic.app/api/post/${postId}`)
       .then((res) => {
         const freshPosts = state.posts.filter((post) => post._id !== postId);
         dispatch({ type: "removePost", value: freshPosts });
@@ -166,7 +166,7 @@ export default function ContentProvider(props) {
 
   function editPost(postId, editedPost) {
     contentAxios
-      .put(`/api/post/${postId}`, editedPost)
+      .put(`https://api-plantae.cyclic.app/api/post/${postId}`, editedPost)
       .then((res) => {
         dispatch({ type: "updatePosts", value: res.data });
       })
@@ -175,7 +175,7 @@ export default function ContentProvider(props) {
 
   function likePost(postId) {
     contentAxios
-      .put(`/api/post/like/${postId}`)
+      .put(`https://api-plantae.cyclic.app/api/post/like/${postId}`)
       .then((res) => {
         location === `/single-post/${postId}`
           ? dispatch({ type: "setSinglePost", value: res.data })
@@ -186,7 +186,7 @@ export default function ContentProvider(props) {
 
   function removeLike(postId) {
     contentAxios
-      .put(`/api/post/removeLike/${postId}`)
+      .put(`https://api-plantae.cyclic.app/api/post/removeLike/${postId}`)
       .then((res) => {
         location === `/single-post/${postId}`
           ? dispatch({ type: "setSinglePost", value: res.data })
@@ -197,7 +197,7 @@ export default function ContentProvider(props) {
 
   function addComment(newComment, postId) {
     contentAxios
-      .post(`/api/comment/${postId}`, newComment)
+      .post(`https://api-plantae.cyclic.app/api/comment/${postId}`, newComment)
       .then((res) => {
         dispatch({
           type: "addComment",
@@ -209,7 +209,7 @@ export default function ContentProvider(props) {
 
   function deleteComment(postId, commentId) {
     contentAxios
-      .delete(`/api/comment/${postId}/${commentId}`)
+      .delete(`https://api-plantae.cyclic.app/api/comment/${postId}/${commentId}`)
       .then((res) => {
         dispatch({
           type: "removeComment",
@@ -232,7 +232,7 @@ export default function ContentProvider(props) {
     formData.append("file", file, fileName);
 
     try {
-      const res = await contentAxios.post("/api/upload", formData, {
+      const res = await contentAxios.post("https://api-plantae.cyclic.app/api/upload", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
