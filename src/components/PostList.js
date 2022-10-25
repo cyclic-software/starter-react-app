@@ -8,8 +8,6 @@ export default function PostList(props) {
   const [filteredPosts, setFilteredPosts] = useState();
   const tags = state.posts.map((post) => post.tag);
 
-  console.log(state.posts)
-
   const displayAll = (
     <>
       {state?.posts?.map((post, index) => (

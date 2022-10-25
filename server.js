@@ -15,6 +15,9 @@ var options = {
   redirect: false
 }
 app.use(express.static('build', options))
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'public/index.html'));
+});
 
 const port = process.env.PORT || 9000
 
