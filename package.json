@@ -28,6 +28,8 @@
     ]
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.4",
+    "@heroicons/react": "^2.0.13",
     "antd": "^5.0.0",
     "express": "^4.17.3"
   },
