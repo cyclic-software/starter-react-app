@@ -1,11 +1,6 @@
 import logo from '../img/logo.png';
-import { Fragment } from 'react'
-import { Menu, Transition } from '@headlessui/react'
-import { LockClosedIcon, ChevronDownIcon  } from '@heroicons/react/20/solid'
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
+import { LockClosedIcon } from '@heroicons/react/20/solid'
 
 const FormLogin = () => {
   return (
@@ -30,10 +25,6 @@ const FormLogin = () => {
           <input type="hidden" name="remember" defaultValue="true" />
           <div className="-space-y-px rounded-md shadow-sm">
             
-
-        
-
-
             <div>
               <label htmlFor="email-address" className="sr-only">
                 Email address
@@ -69,7 +60,7 @@ const FormLogin = () => {
           <div>
           <button
               type="submit"
-              className="group relative flex w-full justify-center rounded-md border border-transparent bg-yellow-400 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              className="group relative flex w-full justify-center rounded-md border border-transparent bg-yellow-400 py-2 px-4 text-sm font-medium text-white hover:bg-yellow-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
             >
               <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                
@@ -79,7 +70,7 @@ const FormLogin = () => {
             <br />
             <button
               type="submit"
-              className="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              className="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
             >
               <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                 <LockClosedIcon className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" aria-hidden="true" />
@@ -93,4 +84,4 @@ const FormLogin = () => {
 
   );
 };
-export default () => <FormLogin />;
+export default FormLogin;
