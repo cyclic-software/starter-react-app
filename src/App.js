@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React Nadun
+          Learn React Nadun Sandeepa
         </a>
       </header>
     </div>
