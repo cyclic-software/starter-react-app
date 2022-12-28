@@ -12,7 +12,7 @@ export default function Admin(props) {
 
     useEffect(() => {
         async function fetchBooks() {
-            let resBook = await fetch('http://localhost:4000/books/json')
+            let resBook = await fetch('https://bookstore-backend.cyclic.app/books/json')
             setBookCollections(await resBook.json())
         }
         fetchBooks()
@@ -20,7 +20,7 @@ export default function Admin(props) {
 
     // Delete Books
     async function handleDelete(e) {
-        let res = await fetch("http://localhost:4000/delete_book", {
+        let res = await fetch("https://bookstore-backend.cyclic.app/delete_book", {
             method: "POST",
             credentials: "include",
             headers: {"Content-Type":"application/json"}, 

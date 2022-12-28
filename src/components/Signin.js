@@ -23,7 +23,7 @@ export default function Signin(props) {
     async function handleSignin() {
         setIsSigningIn(true)
         try {
-            let response = await fetch('http://localhost:4000/signin', {
+            let response = await fetch('https://bookstore-backend.cyclic.app/signin', {
                 method: "POST", 
                 credentials: 'include',
                 headers: {"Content-Type":"application/json"}, 
@@ -36,6 +36,7 @@ export default function Signin(props) {
                 setPassword("")
                 setAuthenticationFailed(true)
             }
+            setIsSigningIn(false)
 
         } catch(err) {
             console.log(err)

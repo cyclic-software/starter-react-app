@@ -34,7 +34,7 @@ export default function Gallery(props) {
     // Add book to cart stored in server
     async function addToBackendCart(bookId) {
         try {
-            let res = await fetch('http://localhost:4000/cart/add', {
+            let res = await fetch('https://bookstore-backend.cyclic.app/cart/add', {
                 method: "POST",
                 credentials: "include",
                 headers: {"Content-Type":"application/json"}, 
@@ -66,10 +66,10 @@ export default function Gallery(props) {
     // Fetch books from backend
     async function fetchData() {
         try {
-            let resBook = await fetch('http://localhost:4000/books/json')
+            let resBook = await fetch('https://bookstore-backend.cyclic.app/books/json')
             setBookCollections(await resBook.json())
     
-            let resCart = await fetch('http://localhost:4000/cart/json', {credentials: "include"})
+            let resCart = await fetch('https://bookstore-backend.cyclic.app/cart/json', {credentials: "include"})
             resCart = await resCart.json()
 
             // if user is logged in
