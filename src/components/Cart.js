@@ -26,7 +26,7 @@ export default function Cart(props) {
     useEffect(() => {
         async function fetchCart() {
             try {
-                let resCart = await fetch('https://bookstore-backend-rwh0.onrender.com/cart/json', {credentials: "include"})
+                let resCart = await fetch('https://bookstore-backend.cyclic.app/cart/json', {credentials: "include"})
                 resCart = await resCart.json()
 
                 // if user is logged in
@@ -97,7 +97,7 @@ export default function Cart(props) {
     async function removeFromCart(e) {
         // remove from backend Cart
         try {
-            let res = await fetch('https://bookstore-backend-rwh0.onrender.com/cart/remove', {
+            let res = await fetch('https://bookstore-backend.cyclic.app/cart/remove', {
                 method: "POST",
                 credentials: "include",
                 headers: {"Content-Type":"application/json"}, 
@@ -128,7 +128,7 @@ export default function Cart(props) {
         else if(cart.length <= 0) {
             handlePopUp("No Book In Cart")
         } else {
-            let res = await fetch("https://bookstore-backend-rwh0.onrender.com/purchase", {
+            let res = await fetch("https://bookstore-backend.cyclic.app/purchase", {
                 method: "POST",
                 credentials: "include",
             })
@@ -155,7 +155,7 @@ export default function Cart(props) {
     // Clear Cart
     async function clearCart() {
         setCart([])
-        await fetch("https://bookstore-backend-rwh0.onrender.com/cart/clear", {
+        await fetch("https://bookstore-backend.cyclic.app/cart/clear", {
             method: "POST",
             credentials: "include",
         })    
@@ -171,7 +171,7 @@ export default function Cart(props) {
     // Add book to cart stored in server
     async function addToBackendCart(bookId) {
         try {
-            let res = await fetch('https://bookstore-backend-rwh0.onrender.com/cart/add', {
+            let res = await fetch('https://bookstore-backend.cyclic.app/cart/add', {
                 method: "POST",
                 credentials: "include",
                 headers: {"Content-Type":"application/json"}, 

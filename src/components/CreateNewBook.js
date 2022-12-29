@@ -6,7 +6,7 @@ export default function CreateNewBook(props) {
     let [rating, setRating] = useState(0)
     let [price, setPrice] = useState(0)
     let [bookCover, setBookCover] = useState()
-    let [bookCoverPath, setBookCoverPath] = useState("https://bookstore-backend-rwh0.onrender.com/img/book-cover-logo.jpg")
+    let [bookCoverPath, setBookCoverPath] = useState("https://bookstore-backend.cyclic.app/img/book-cover-logo.jpg")
     let [showErr, setShowErr] = useState(false)
     let [titleErr, setTitleErr] = useState(true)
     let [ratingErr, setRatingErr] = useState(true)
@@ -73,7 +73,7 @@ export default function CreateNewBook(props) {
         setRating(0)
         setPrice(0)
         setBookCover(undefined)
-        setBookCoverPath("https://bookstore-backend-rwh0.onrender.com/img/photo-logo.jpg")
+        setBookCoverPath("https://bookstore-backend.cyclic.app/img/photo-logo.jpg")
         form.current.reset()
     }
 
@@ -91,7 +91,7 @@ export default function CreateNewBook(props) {
 
         setIsSavingBook(true)
 
-        let response = await fetch("https://bookstore-backend-rwh0.onrender.com/books/create", {
+        let response = await fetch("https://bookstore-backend.cyclic.app/books/create", {
             method: "POST",
             credentials: "include",
             body: formData,

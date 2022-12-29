@@ -49,7 +49,7 @@ export default function Signup(props) {
         }
 
         setSigningUp(true)
-        let res = await fetch("https://bookstore-backend-rwh0.onrender.com/signup", {
+        let res = await fetch("https://bookstore-backend.cyclic.app/signup", {
             method: "POST",
             credentials: "include",
             headers: {"Content-Type":"application/json"},
@@ -75,7 +75,7 @@ export default function Signup(props) {
         // redirect to main page
         if(res.message) {
             try {
-                let response = await fetch('https://bookstore-backend-rwh0.onrender.com/signin', {
+                let response = await fetch('https://bookstore-backend.cyclic.app/signin', {
                     method: "POST", 
                     credentials: 'include',
                     headers: {"Content-Type":"application/json"}, 
