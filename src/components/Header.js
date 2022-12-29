@@ -16,7 +16,7 @@ export default function Header(props) {
 
     async function handleLogOut() {
         try {
-            await fetch("https://bookstore-backend-rwh0.onrender.com/logout", {credentials: 'include'})
+            await fetch("https://bookstore-backend.cyclic.app/logout", {credentials: 'include'})
             navigate('/')
             window.location.reload()  
 
@@ -36,7 +36,7 @@ export default function Header(props) {
     return(
         <header>
         <div className={extendedMobileNav ? 'dim-cover cover' : 'dim-cover'}></div>
-        <a href="/" className="logo"><img src="https://bookstore-backend-rwh0.onrender.com/img/logo.png" alt="logo"/></a>
+        <a href="/" className="logo"><img src="https://bookstore-backend.cyclic.app/img/logo.png" alt="logo"/></a>
         <nav className='desktop-nav'>
             <ul>
                 {currentUser ? <li><Link to='/profile'>Hello, {currentUser.firstname}!</Link></li> : null}
