@@ -23,7 +23,7 @@ export default function Signin(props) {
     async function handleSignin() {
         setIsSigningIn(true)
         try {
-            let response = await fetch('http://localhost:4000//signin', {
+            let response = await fetch('http://localhost:4000/signin', {
                 method: "POST", 
                 credentials: 'include',
                 headers: {"Content-Type":"application/json"}, 

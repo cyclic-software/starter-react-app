@@ -11,7 +11,7 @@ import User from './components/User'
 export default function App() { 
     async function getUser() {
         try{
-            let response = await fetch('http://localhost:4000//user', {credentials: 'include'})
+            let response = await fetch('http://localhost:4000/user', {credentials: 'include'})
             let data = await response.json()
             return data
         } catch(err) {

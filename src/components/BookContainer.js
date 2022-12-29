@@ -20,7 +20,7 @@ export default function BookContainer(props) {
 
     // fetch book.pdf from backend and display it in a new window
     async function handleOpenBook() {
-        let res = await fetch("http://localhost:4000//book/view", {
+        let res = await fetch("http://localhost:4000/book/view", {
             method: "POST",
             credentials: "include",
             headers: {"Content-Type":"application/json"}, 
@@ -51,7 +51,7 @@ export default function BookContainer(props) {
 
     return(
         <div className="book-container box-shadow">
-            <img src={"http://localhost:4000//" + props.book.bookCover} alt="book cover" className="book-cover" />
+            <img src={"http://localhost:4000/" + props.book.bookCover} alt="book cover" className="book-cover" />
             <h2 className="book-title">{props.book.title}</h2>
             <div className="rating-container">{props.createStarsRating(props.book.rating)}<span className="rating">{props.book.rating.toFixed(1)}</span></div>
             <div className='price'>${props.book.price}</div>
