@@ -11,7 +11,7 @@ import User from './components/User'
 export default function App() { 
     async function getUser() {
         try{
-            let response = await fetch('https://bookstore-backend.cyclic.app/user', {credentials: 'include'})
+            let response = await fetch('https://bookstore-backend-rwh0.onrender.com/user', {credentials: 'include'})
             let data = await response.json()
             return data
         } catch(err) {
