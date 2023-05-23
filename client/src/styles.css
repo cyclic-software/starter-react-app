@@ -1,0 +1,83 @@
+
+.form-container {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .form-container label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .form-container input[type="text"],
+  .form-container input[type="email"],
+  .form-container input[type="date"],
+  .form-container input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .form-container button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .form-container button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  .form-container p.error-message {
+    color: #ff0000;
+    margin-top: 10px;
+  }
+
+  
+  .submitted-forms-container {
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .submitted-forms-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .submitted-forms-container h2 {
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .submitted-forms-container p {
+    margin-bottom: 5px;
+  }
+  
+  .submitted-forms-container hr {
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+  }
+  
