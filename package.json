@@ -28,7 +28,9 @@
     ]
   },
   "dependencies": {
-    "express": "^4.17.3"
+    "bootstrap": "^5.2.3",
+    "express": "^4.17.3",
+    "react-bootstrap": "^2.7.4"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.2",
