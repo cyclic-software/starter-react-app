@@ -1,0 +1,8 @@
+{
+    "email": "string",
+    "mobile": "number",
+    "type": "string",
+    "content": {
+        "dd1": "say, whadup doc!"
+    }
+}
