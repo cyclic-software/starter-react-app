@@ -1,44 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Generator from './Generator';
+import Verify from './Verify';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
-
-  let generateText = async () => {
-    console.log("generate logo");
-
-    fetch("/generateBlog", {
-        method: "POST",
-        mode: "cors",
-        cache: "no-cache",
-        credentials: "same-origin",
-        headers: {
-        "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            "hey":"yo"
-        })
-    }).then(res=>{
-        console.log("Response", res)
-    })
-  }
-
-  // let generateLogo = async () => {
-
-  // }
-
-    return (
-      <div className="App">
-        <header className="App-header">
-          
-          <button onClick={generateText}>Generate Blog</button>
-
-
-
-          {/* <button onClick={generateLogo}>Generate Logo</button> */}
-
-        </header>
-      </div>
-    );
+  return (
+    <Router>
+        <Routes>
+          <Route path="/user/verify/:token" element={<Verify/>}/>
+          <Route path="/" element={<Generator />} />
+        </Routes>
+    </Router>
+  );
 }
 
 export default App;
