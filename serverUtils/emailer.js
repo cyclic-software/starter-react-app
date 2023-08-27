@@ -11,19 +11,17 @@ var transporter = nodemailer.createTransport({
     }
 });
 
-const sendEmail = async (request) => {
+const sendEmail = async (email, mobile, name) => {
     // 2.2 User doesn't exists
     // 1. Send OTP to end user
-    const dataToEncrypt = {
-        email: "arulvinayakmenon@gmail.com"
-    }
+    const dataToEncrypt = { email: email, mobile: mobile, name:  name}
     // const basePath = "https://long-jade-sheep.cyclic.cloud/verify"
     const basePath = "http://localhost:3000"
     const token = jwt.sign(dataToEncrypt, "secretKey", { algorithm: 'HS256' });
     const mailSendingStartTime = new Date()
     const info = await transporter.sendMail({
         from: '"Welcome from Halo 👻" no-reply@haloeffect.in', // sender address
-        to: "arveymenon@gmail.com", // list of receivers
+        to: email, // list of receivers
         subject: "Verfication Link ✔", // Subject line
         text: "Test mailer. Yo Bro!", // plain text body
         html: `<a href="${basePath}/user/verify/${token}">Verify</a>`,
