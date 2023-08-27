@@ -52,15 +52,29 @@ async function fetchLeads(mobile, email, type) {
 }
 
 async function putLead(name, email, mobile) {
-  let item = {
-    name: name,
-    mobile: mobile,
-    email_id: email,
-    remaining_blog_usage_count: 3,
-    remaining_logo_usage_count: 5
-  }
   try {
-    await myWixClient.dataItems.saveDataItem({dataCollectionId: 'Leads', dataItem: {data: item}})
+    const lead = (await myWixClient.items
+      .queryDataItems({ dataCollectionId: 'Leads' })
+      .find(
+        { fields: { "mobile": "9920807002" }}
+      ))._items[0];
+
+    delete lead._id
+    delete lead.data._id
+
+    lead.data.name = name
+    
+    lead.data.mobile = mobile
+    lead.data.emailid = email
+    lead.data.remaining_blog_usage_count = 3
+    lead.data.remaining_logo_usage_count = 5
+
+    const options = { dataCollectionId: "Leads", dataItem: {
+      data: lead.data
+    }};
+
+    let response = await myWixClient.dataItems.saveDataItem(options)
+    console.log(response)
     return true
   } catch (e) {
     return false

@@ -47,6 +47,7 @@ app.post("/generateBlog", async (request, response)=>{
   //   6. Suggested Categories for the Blog
   // `
 
+  const name = body.name;
   const email = body.email;
   const mobile = body.mobile;
   const type = body.type;
@@ -56,7 +57,7 @@ app.post("/generateBlog", async (request, response)=>{
   let getLeadsResponse = await fetchLeads(mobile, email, type);
   if (typeof getLeadsResponse === 'number') {
     if (getLeadsResponse > 0) {
-      const count = await reduceCount(number, type)
+      const count = await reduceCount(mobile, type)
       console.log(count)
       count > -1 && await getBlogData(request, response, content);
     } else {
@@ -64,10 +65,9 @@ app.post("/generateBlog", async (request, response)=>{
     }
   } else {
     console.log("fire email verification link")
-    await sendEmail(request)
+    await sendEmail(email, mobile, name)
     response.status(200).send({"message": {"message": "Welcome to Halo. Kindly verify your email via the email notification send to you. Once completed, Simply click on the submit button to generate your "+ type}})
   }
-
 });
 
 
@@ -85,7 +85,7 @@ app.get('/verify', async (request, response) => {
       else {
           // create a new record in the DB
           // add an entry and give 3 blogs and 5 logos.
-          let res = await putLead(request.name, request.email, request.mobile)
+          let res = await putLead(decoded.name, decoded.email, decoded.mobile)
           
           if(res) {
             response.send({message: "Email verifified successfully"});
