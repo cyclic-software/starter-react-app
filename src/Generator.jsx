@@ -62,7 +62,6 @@ function Generator () {
               <input type="text" id="industry_name" placeholder="industry_name" onChange={(event) => updateForm(event, "industry_name")}/>
               <input type="text" id="blog_type" placeholder="blog_type" onChange={(event) => updateForm(event, "blog_type")}/>
               <input type="text" id="topic" placeholder="topic" onChange={(event) => updateForm(event, "topic")}/>
-              <input type="text" id="type" placeholder="generator_type" value="blog" onChange={(event) => updateForm(event, "type")}/>
 
               <button disabled={disableGenerate} onClick={formGenerateData}>Generate Blog</button>
               <div dangerouslySetInnerHTML={{__html: blog}} />
