@@ -2,7 +2,7 @@
 import { Remarkable } from 'remarkable';
 const md = new Remarkable();
 
-const content = (body) => {
+const getContent = (reqBody) => {
     return {
         method: "POST",
         mode: "cors",
@@ -11,27 +11,29 @@ const content = (body) => {
         headers: {
         "Content-Type": "application/json"
         },
-        body: JSON.stringify({
-            "email": "arulvinayakmenon@gmail.com",
-            "mobile": "9920807004",
-            "type": "blog",
-            "content": {
-                "dd1": "value"
-            }
-        })
+        body: JSON.stringify(reqBody)
     }
 }
 
-const generateBlog = async () => {
-    return await fetch("/generateBlog", {method: "POST"}, content({
-        "hey":"yo"
+const generateData = async (generatorData, userData) => {
+    return await fetch("/generateData", getContent({
+        ...userData,
+        content: generatorData
     })).then(async res => {
-        let resBlog = (await res.json()).response
-        const renderedHTML = md.render(resBlog);
-        return renderedHTML;
+        const response = (await res.json())
+
+        if(response.message){
+            return response
+        } else {
+            const blog = response.response
+            const user = response.user
+            localStorage.setItem('User',JSON.stringify(user))
+            const renderedHTML = md.render(blog);
+            return renderedHTML;
+        }
     }).catch(err => {
       console.log("Error", err)
     })
 }
 
-export { generateBlog }
+export { generateData }
