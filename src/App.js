@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { lazy, Suspense } from "react";
+import TopNav from './components/TopNav';
+import Home from './components/Home';
+import Footer from './components/Footer';
 
+// import Cart from './components/Cart';
+import NoMatch from './components/NoMatch';
+import {Routes , Route } from "react-router-dom"; 
+
+const CartLazy = lazy(()=>import('./components/Cart'))
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <TopNav />
+       
+          <Routes> 
+            <Route path ="/" element= {<Home />}/> 
+            
+            <Route path ="/cart" element= {
+            <Suspense fallback={<div>Loading ...</div>}>
+              <CartLazy />
+            </Suspense>}
+            /> 
+          
+            <Route path ="*" element= {<NoMatch />}/> 
+          </Routes> 
+        
+
+        <Footer />
+        
     </div>
   );
 }
